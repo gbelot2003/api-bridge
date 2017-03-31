@@ -1,0 +1,32 @@
+{
+  "name": "api-bridge",
+  "version": "1.0.0",
+  "description": "Watch changes in a folder in a server 'A' and when a file has been uploaded to this via ssh/sftp this server in node.js will parse the file and will send it to another server 'B' to save it in a datastore.",
+  "main": "./src/index.js",
+  "scripts": {
+    "dev": "./node_modules/.bin/nodemon --exec ./node_modules/.bin/babel-node -- ./server.js",
+    "start": "./node_modules/.bin/babel-node ./src/index.js",
+    "serve": "./node_modules/.bin/babel ./src/index.js --out-file ./src/watcher.min.js --compact true && ./node_modules/.bin/babel-node ./src/watcher.min.js"
+  },
+  "keywords": [
+    "sftp",
+    "ssh",
+    "fs",
+    "watcher"
+  ],
+  "author": "Norman Carcamo",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "babel-cli": "^6.24.0",
+    "babel-preset-env": "^1.2.2",
+    "moment": "^2.18.1",
+    "remote-file-watcher": "^1.0.6",
+    "request": "^2.81.0",
+    "ssh2-sftp-client": "^1.0.5",
+    "xml2js": "^0.4.17"
+  },
+  "devDependencies": {
+    "colors": "^1.1.2",
+    "nodemon": "^1.11.0"
+  }
+}
